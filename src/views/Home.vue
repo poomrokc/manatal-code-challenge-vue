@@ -21,7 +21,6 @@
                       height="170px"
                       :src="item.urlToImage"
                     >
-                      <v-card-title></v-card-title>
                     </v-img>
 
                     <v-card-text class="text--primay">
@@ -38,7 +37,7 @@
     >
       <v-card>
         <v-card-title class="headline">Edit headline</v-card-title>
-        <v-divider :inset="inset"></v-divider>
+        <v-divider inset></v-divider>
         <v-card-text>
         <v-textarea
           v-model="headline"
@@ -49,7 +48,7 @@
           persistent-hint
         ></v-textarea>
         </v-card-text>
-        <v-divider :inset="inset"></v-divider>
+        <v-divider inset></v-divider>
         <v-card-actions>
           <v-spacer></v-spacer>
 
@@ -77,7 +76,7 @@
     >
       <v-card>
         <v-card-title class="history">View history</v-card-title>
-        <v-divider :inset="inset"></v-divider>
+        <v-divider inset></v-divider>
         <v-card-text v-for="(item, index) in history" v-bind:key="index">
           <v-list-item two-line>
             <v-list-item-content>
@@ -87,7 +86,7 @@
               <v-list-item-subtitle>{{item.time}}</v-list-item-subtitle>
              </v-list-item-content>
           </v-list-item>
-          <v-divider :inset="inset"></v-divider>
+          <v-divider inset></v-divider>
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>

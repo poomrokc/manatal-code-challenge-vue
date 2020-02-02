@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
-import About from '../views/About.vue';
+import ArticleDetail from '../views/ArticleDetail.vue';
 
 Vue.use(VueRouter);
 
@@ -13,8 +13,8 @@ const routes = [
   },
   {
     path: '/article/:articleIndex',
-    name: 'article',
-    component: About,
+    name: 'articleDetail',
+    component: ArticleDetail,
   },
 ];
 
