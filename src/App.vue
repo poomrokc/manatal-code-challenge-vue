@@ -15,5 +15,9 @@ export default {
   data: () => ({
     //
   }),
+  created() {
+    this.$store.dispatch('loadArticles');
+    this.$store.dispatch('loadSources');
+  },
 };
 </script>
