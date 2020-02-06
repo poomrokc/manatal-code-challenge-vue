@@ -13,7 +13,10 @@
         <v-card-text>
           <div class="news-title">{{$props.item.title}}</div>
         </v-card-text>
-        <Toolbar :articleIndex="$props.item.index" @edit="editHeader">
+        <Toolbar
+          :articleIndex="$props.item.index"
+          @edit="editHeader"
+        >
         </Toolbar>
     </v-card>
   </v-col>

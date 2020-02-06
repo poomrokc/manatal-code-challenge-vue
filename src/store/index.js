@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import config from '@/config';
 
 Vue.use(Vuex);
 
@@ -88,7 +89,7 @@ export default new Vuex.Store({
       commit('setArticle', []);
       commit('setLastRequest', nowTime);
       commit('setFetchArticles', true);
-      Vue.axios.get('https://newsapi.org/v2/top-headlines?country=us&apiKey=099148be22804e849a0c6fe022b7cf5e').then((response) => {
+      Vue.axios.get(`${config.NEWS_API_URL}?country=us&apiKey=${config.API_KEY}`).then((response) => {
         if (nowTime !== state.lastRequest) {
           return;
         }
@@ -102,7 +103,7 @@ export default new Vuex.Store({
       commit('setArticle', []);
       commit('setLastRequest', nowTime);
       commit('setFetchArticles', true);
-      Vue.axios.get(`https://newsapi.org/v2/top-headlines?q=${input}&apiKey=099148be22804e849a0c6fe022b7cf5e`).then((response) => {
+      Vue.axios.get(`${config.NEWS_API_URL}?q=${input}&apiKey=${config.API_KEY}`).then((response) => {
         if (nowTime !== state.lastRequest) {
           return;
         }
@@ -113,7 +114,7 @@ export default new Vuex.Store({
     },
     loadSources({ commit }) {
       commit('setFetchSources', true);
-      Vue.axios.get('https://newsapi.org/v2/sources?apiKey=099148be22804e849a0c6fe022b7cf5e').then((response) => {
+      Vue.axios.get(`${config.SOURCES_URL}?apiKey=${config.API_KEY}`).then((response) => {
         const { data } = response;
         const storeData = data.sources.map(source => source.name);
         commit('setFetchSources', false);
@@ -121,7 +122,7 @@ export default new Vuex.Store({
       });
     },
     loadError({ commit }) {
-      Vue.axios.get('https://newsapi.org/v2/sources?apiKey').catch((err) => {
+      Vue.axios.get(`${config.ERROR_URL}`).catch((err) => {
         commit('updateErrMsg', err.response.data.message);
         commit('updateErrAlert', true);
       });

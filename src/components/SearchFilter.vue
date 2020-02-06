@@ -19,7 +19,12 @@
         offset-y
       >
         <template v-slot:activator="{ on }">
-          <v-btn v-on="on" slot="activator" :color="hasFilter" icon>
+          <v-btn
+            v-on="on"
+            slot="activator"
+            :color="hasFilter"
+            icon
+          >
             <v-icon>mdi-filter-menu</v-icon>
           </v-btn>
         </template>
@@ -27,7 +32,12 @@
           <v-card-title>
             Source Filter
             <v-spacer></v-spacer>
-            <v-btn color="black darken-1" text @click="menu = false" icon>
+            <v-btn
+              color="black darken-1"
+              text
+              @click="menu = false"
+              icon
+            >
               <v-icon>mdi-close</v-icon>
             </v-btn>
           </v-card-title>

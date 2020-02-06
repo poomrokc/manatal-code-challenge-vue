@@ -3,7 +3,10 @@
     <v-toolbar dense dark>
       <v-toolbar-title>News for you</v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn color="warning" @click="fetchError">
+      <v-btn
+        color="warning"
+        @click="fetchError"
+      >
         Error call
       </v-btn>
       <v-btn @click="showHistory">
@@ -15,14 +18,22 @@
       <v-container>
         <SearchFilter></SearchFilter>
         <v-row justify="center">
-          <v-col md="4" cols="12" sm="6" v-if="fetchArticles">
+          <v-col
+            md="4"
+            cols="12"
+            sm="6"
+            v-if="fetchArticles"
+          >
             <v-skeleton-loader
               class="mx-auto"
               max-width="300"
               type="card"
             ></v-skeleton-loader>
           </v-col>
-          <div class="title" v-if="articles.length === 0 && !fetchArticles">No result</div>
+          <div
+            class="title"
+            v-if="articles.length === 0 && !fetchArticles"
+          >No result</div>
           <ArticleCard
             v-for="(item, index) in articles"
             :item="item"

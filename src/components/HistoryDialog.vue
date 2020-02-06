@@ -6,8 +6,16 @@
           <v-card>
             <v-card-title class="history">View history</v-card-title>
             <v-divider inset></v-divider>
-            <div class="subtitle-2 text-center mt-5" v-if="history.length === 0">No history</div>
-            <v-card-text v-for="(item, index) in history" v-bind:key="index">
+            <div
+              class="subtitle-2 text-center mt-5"
+              v-if="history.length === 0"
+            >
+              No history
+            </div>
+            <v-card-text
+              v-for="(item, index) in history"
+              v-bind:key="index"
+            >
               <v-list-item two-line>
                 <v-list-item-content>
                   <v-list-item-title class="list-title">
