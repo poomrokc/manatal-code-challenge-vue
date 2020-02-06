@@ -1,4 +1,8 @@
 # manatal-code-challenge-vue
+by Poompatai Puntitpong
+
+## Live example
+Hosted at https://poomrokc.services/manatal-vue/
 
 ## Project setup
 ```
@@ -10,20 +14,7 @@ npm install
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your unit tests
+### Run unit tests(Only covers 1 component)
 ```
 npm run test:unit
 ```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
